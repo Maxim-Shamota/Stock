@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import site.shamota.stock.entity.Product;
 import site.shamota.stock.service.ProductService;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @org.springframework.web.bind.annotation.RestController
@@ -24,6 +25,7 @@ public class ProductController {
         return ResponseEntity.ok().body(productList);
     }
 
+    @Transactional
     @PostMapping("/product/save")
     public ResponseEntity<Product> createUser(@RequestBody Product product) {
         productService.saveProduct(product);
