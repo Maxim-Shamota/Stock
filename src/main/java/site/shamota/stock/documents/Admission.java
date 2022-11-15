@@ -26,10 +26,10 @@ public class Admission {
     private Long id;
 
     @ManyToOne
+    @JoinColumn(name = "stock_id")
     private Stock stock;
 
-    @OneToMany(cascade = CascadeType.ALL,
-            mappedBy = "admission")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "admission")
     private List<Product> products;
 
 }

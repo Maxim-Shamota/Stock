@@ -7,23 +7,23 @@ import site.shamota.stock.repository.AdmissionRepository;
 import java.util.List;
 
 @Service
-public class AdmissionService {
+public class DocumentService {
 
     private final AdmissionRepository admissionRepository;
 
-    public AdmissionService(AdmissionRepository admissionRepository) {
+    public DocumentService(AdmissionRepository admissionRepository) {
         this.admissionRepository = admissionRepository;
     }
 
-    public Admission getById(long id) {
+    public Admission getDocumentById(long id) {
         return admissionRepository.findById(id).orElse(null);
     }
 
-    public List<Admission> findAll() {
+    public List<Admission> findDocumentAll() {
         return admissionRepository.findAll();
     }
 
-    public void saveAdmission(Admission admission) {
+    public void saveDocument(Admission admission) {
         admissionRepository.save(admission);
     }
 
